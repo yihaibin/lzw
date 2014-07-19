@@ -1,0 +1,7 @@
+<resources>
+
+    <!-- goods_item -->
+    <dimen name="goods_item_margin_horizontal">5dp</dimen>
+    <dimen name="goods_item_textsize_price">16dp</dimen>
+
+</resources>

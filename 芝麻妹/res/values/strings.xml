@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">芝麻妹</string>
+
+    <!-- Tab host -->
+    <string name="tab_name_homepage">首页</string>
+    <string name="tab_name_barcode">条码</string>
+    <string name="tab_name_record">记录</string>
+
+</resources>
