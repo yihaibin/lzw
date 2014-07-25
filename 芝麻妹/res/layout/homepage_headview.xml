@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/homepage_headview_layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/homepage_headview_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/homepage_headview_tv_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/homepage_headview_iv"
+            android:text="筛选"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/homepage_headview_btn_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="确定" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/homepage_headview_layout_title"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分类:"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:checked="true"
+                android:text="全部"
+                android:textSize="@dimen/homepage_headview_textsize" >
+            </RadioButton>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/homepage_headview_radiobutton_margin_left"
+                android:button="@null"
+                android:checked="true"
+                android:text="护肤"
+                android:textSize="@dimen/homepage_headview_textsize" >
+            </RadioButton>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/homepage_headview_radiobutton_margin_left"
+                android:button="@null"
+                android:checked="true"
+                android:text="彩妆"
+                android:textSize="@dimen/homepage_headview_textsize" >
+            </RadioButton>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/homepage_headview_radiobutton_margin_left"
+                android:button="@null"
+                android:checked="true"
+                android:text="香水"
+                android:textSize="@dimen/homepage_headview_textsize" >
+            </RadioButton>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/homepage_headview_radiobutton_margin_left"
+                android:button="@null"
+                android:checked="true"
+                android:text="身体护理"
+                android:textSize="@dimen/homepage_headview_textsize" >
+            </RadioButton>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/homepage_headview_radiobutton_margin_left"
+                android:button="@null"
+                android:checked="true"
+                android:text="套装礼盒"
+                android:textSize="@dimen/homepage_headview_textsize" >
+            </RadioButton>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/homepage_headview_radiobutton_margin_left"
+                android:button="@null"
+                android:checked="true"
+                android:text="美妆工具"
+                android:textSize="@dimen/homepage_headview_textsize" >
+            </RadioButton>
+        </RadioGroup>
+    </LinearLayout>
+
+</RelativeLayout>

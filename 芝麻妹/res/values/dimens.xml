@@ -4,4 +4,10 @@
     <dimen name="goods_item_margin_horizontal">5dp</dimen>
     <dimen name="goods_item_textsize_price">16dp</dimen>
 
+    <!-- homepage_headview -->
+    <dimen name="homepage_headview_radiobutton_margin_left">20dp</dimen>
+    <dimen name="homepage_headview_textsize">15dp</dimen>
+    
+    
+    
 </resources>
