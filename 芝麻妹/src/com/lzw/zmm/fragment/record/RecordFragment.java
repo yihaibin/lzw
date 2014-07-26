@@ -1,12 +1,28 @@
 package com.lzw.zmm.fragment.record;
 
+import android.os.Bundle;
+import android.widget.ListView;
+
+import com.androidex.util.ViewUtil;
 import com.lzw.zmm.R;
+import com.lzw.zmm.adapter.RecordAdapter;
 import com.lzw.zmm.base.BaseFragment;
+import com.lzw.zmm.db.RecordDao;
 import com.lzw.zmm.util.res.ResLoader;
 
 public class RecordFragment extends BaseFragment {
 
+	private RecordDao mRecordDao;
+	private RecordAdapter mRecordAdapter;
+	
 	public RecordFragment() {
+	}
+	
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		
+		super.onActivityCreated(savedInstanceState);
+		setFragmentContentView(R.layout.record_fragment);
 	}
 
 	@Override
@@ -22,16 +38,26 @@ public class RecordFragment extends BaseFragment {
 	@Override
 	protected void initData() {
 
-	}
-
-	@Override
-	protected void initContentView() {
-		
+		mRecordDao = new RecordDao(getActivity());
+		mRecordAdapter = new RecordAdapter();
+		mRecordAdapter.setData(mRecordDao.getAllRecord());
 	}
 
 	@Override
 	protected void initTitleView() {
-		
+	
+		addTitleMiddleTextView(R.string.scanner_record);
 	}
+	
+	@Override
+	protected void initContentView() {
+		
+		ListView lvRecords = (ListView) findViewById(R.id.lvRecords);
+		lvRecords.addHeaderView(ViewUtil.inflateSpaceViewBydp(3));
+		lvRecords.addFooterView(ViewUtil.inflateSpaceViewBydp(3));
+		lvRecords.setAdapter(mRecordAdapter);
+	}
+
+
 
 }

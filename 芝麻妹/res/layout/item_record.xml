@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+   	android:paddingLeft="6dp"
+   	android:paddingRight="6dp" 
+   	android:paddingTop="3dp"
+   	android:paddingBottom="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <com.androidex.asyncimage.AsyncImageView
+            android:id="@+id/aivRecordCover"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_weight="0"
+            android:src="@android:color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvRecordTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@android:color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tvRecordTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:ellipsize="end"
+                android:textColor="@android:color/background_dark"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:src="@drawable/ic_arrow" />
+    </LinearLayout>
+
+</FrameLayout>

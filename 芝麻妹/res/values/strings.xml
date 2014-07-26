@@ -7,5 +7,7 @@
     <string name="tab_name_home">首页</string>
     <string name="tab_name_barcode">条码</string>
     <string name="tab_name_record">记录</string>
+    <string name="scanner_record">扫描历史记录</string>
+    <string name="barcode_scanner">条形码扫描</string>
 
 </resources>
