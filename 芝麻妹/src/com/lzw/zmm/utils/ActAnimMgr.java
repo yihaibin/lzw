@@ -2,7 +2,6 @@ package com.lzw.zmm.utils;
 
 import android.app.Activity;
 
-import com.lzw.lib.utils.ActAnimUtil;
 import com.lzw.zmm.R;
 
 public class ActAnimMgr {
@@ -43,6 +42,17 @@ public class ActAnimMgr {
 				break;
 		}
 
-		ActAnimUtil.startActAnim(activity, inAnim, outAnim);
+		startActAnim(activity, inAnim, outAnim);
+	}
+	
+	private static void startActAnim(Activity activity, int inAnim, int outAnim) {
+
+		if (android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.DONUT) {
+			new Object() {
+				public void overridePendingTransition(Activity act, int i, int j) {
+					act.overridePendingTransition(i, j);
+				}
+			}.overridePendingTransition(activity, inAnim, outAnim);
+		}
 	}
 }

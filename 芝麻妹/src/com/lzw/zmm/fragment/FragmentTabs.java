@@ -9,12 +9,12 @@ import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TextView;
 
-import com.lzw.lib.base.LogMgr;
+import com.androidex.util.LogMgr;
 import com.lzw.zmm.R;
 import com.lzw.zmm.base.BaseFragment;
 import com.lzw.zmm.base.BaseFragmentActivity;
 import com.lzw.zmm.fragment.barcode.BarcodeFragment;
-import com.lzw.zmm.fragment.homepage.HomepageFragment;
+import com.lzw.zmm.fragment.homepage.HomeFragment;
 import com.lzw.zmm.fragment.record.RecordFragment;
 import com.lzw.zmm.utils.FragmentUtil;
 
@@ -38,7 +38,7 @@ public class FragmentTabs extends BaseFragmentActivity implements OnTabChangeLis
 	protected void initData() {
 		mFragments = new ArrayList<BaseFragment>();
 
-		mFragments.add(new HomepageFragment());
+		mFragments.add(new HomeFragment());
 		mFragments.add(new BarcodeFragment());
 		mFragments.add(new RecordFragment());
 	}

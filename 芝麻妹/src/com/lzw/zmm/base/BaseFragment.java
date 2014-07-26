@@ -1,28 +1,25 @@
 package com.lzw.zmm.base;
 
-import com.lzw.lib.ex.FragmentEx;
-import com.lzw.zmm.dialog.DialogMgr;
+import android.view.LayoutInflater;
+
+import com.androidex.activity.ExFragment;
 
 /**
  * 只用于底下的Tabhost
+ * 
  * @author ForGetMan
  */
-abstract public class BaseFragment extends FragmentEx  {
-
-	private DialogMgr mDialogMgr;
+abstract public class BaseFragment extends ExFragment {
 
 	public BaseFragment() {
 		super();
 	}
 
+	protected LayoutInflater getLayoutInflater() {
+		return getActivity().getLayoutInflater();
+	}
+	
 	abstract public String getTagName();
 
 	abstract public int getViewId();
-
-	protected DialogMgr getDialogMgr() {
-		if (mDialogMgr == null) {
-			mDialogMgr = new DialogMgr(getActivity());
-		}
-		return mDialogMgr;
-	}
 }

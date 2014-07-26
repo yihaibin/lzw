@@ -1,9 +1,10 @@
 package com.lzw.zmm;
 
-import com.lzw.lib.ex.AppEx;
+import com.androidex.context.ExApplication;
 
 
-public class App extends AppEx {
+
+public class App extends ExApplication {
 
 	@Override
 	public void onCreate() {
