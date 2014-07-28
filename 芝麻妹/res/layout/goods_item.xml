@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="2"
                 android:text="Dr.MJ蜗牛弹力美白补水保湿宝面霜50ml"
-                android:textColor="@dimen/goods_item_text_normal"
+                android:textColor="@color/goods_item_text_normal"
                 android:textSize="17dp" />
 
             <ImageView
@@ -86,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="共"
-                    android:textColor="@color/black"
+                    android:textColor="@color/goods_item_text_normal"
                     android:textSize="14dp" />
 
                 <TextView
@@ -100,7 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="家报价"
-                    android:textColor="@color/black"
+                    android:textColor="@color/goods_item_text_normal"
                     android:textSize="14dp" />
 
                 <TextView
@@ -115,7 +115,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="购买"
-                    android:textColor="@color/black"
+                    android:textColor="@color/goods_item_text_normal"
                     android:textSize="14dp" />
 
                 <RelativeLayout

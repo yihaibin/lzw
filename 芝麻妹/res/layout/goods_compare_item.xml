@@ -6,7 +6,7 @@
     android:background="@color/white"
     android:paddingLeft="6dp"
     android:paddingRight="6dp"
-    tools:ignore="SpUsage,HardcodedText" >
+    tools:ignore="SpUsage,HardcodedText,ContentDescription" >
 
     <ImageView
         android:layout_width="match_parent"
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="团购"
-            android:textColor="@color/black"
+            android:textColor="@color/goods_item_text_normal"
             android:textSize="12dp" />
     </LinearLayout>
 
