@@ -1,14 +1,18 @@
 <resources>
 
     <!-- goods_item -->
-    <dimen name="goods_item_margin_horizontal">5dp</dimen>
-    <dimen name="goods_item_textsize_price">16dp</dimen>
+    <dimen name="goods_item_textsize_price">21dp</dimen>
+    <dimen name="goods_item_textsize_money_symbol">11dp</dimen>
+    <dimen name="goods_item_btn_compare_textsize">17dp</dimen>
+    <dimen name="goods_item_btn_compare_width">53dp</dimen>
+    <dimen name="goods_item_btn_compare_height">26dp</dimen>
 
     <!-- home_headview -->
-    <dimen name="home_headview_radiobutton_margin_horizontal">10dp</dimen>
-    <dimen name="home_headview_radiobutton_margin_vertical">2dp</dimen>
-    <dimen name="home_headview_textsize">15dp</dimen>
-    <dimen name="home_headview_layout_radiogroup_padding">15dp</dimen>
+    <dimen name="home_headview_radiobutton_margin_horizontal">12dp</dimen>
+    <dimen name="home_headview_radiobutton_margin_vertical">0dp</dimen>
+    <dimen name="home_headview_textsize">14dp</dimen>
+    <dimen name="home_headview_layout_rg_padding_horizontal">25dp</dimen>
+    <dimen name="home_headview_layout_rg_padding_vertical">19dp</dimen>
     
     
 </resources>

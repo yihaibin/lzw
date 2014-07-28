@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/transparent"
+    android:background="@color/white"
     android:orientation="horizontal"
-    android:padding="10dp"
+    android:padding="6dp"
     tools:ignore="SpUsage,HardcodedText" >
 
     <LinearLayout
@@ -14,31 +14,35 @@
         android:orientation="horizontal" >
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@color/gray" />
+            android:layout_width="107dp"
+            android:layout_height="107dp"
+            android:layout_margin="7dp"
+            android:src="@drawable/goods_item_icon_default" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp" >
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="13dp" >
 
             <TextView
                 android:id="@+id/goods_item_tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="2"
                 android:text="Dr.MJ蜗牛弹力美白补水保湿宝面霜50ml"
-                android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textColor="@dimen/goods_item_text_normal"
+                android:textSize="17dp" />
 
-            <View
+            <ImageView
                 android:id="@+id/goods_item_view_split"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="1px"
                 android:layout_below="@id/goods_item_tv_name"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/gray" />
+                android:layout_marginBottom="9dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/goods_item_split_line" />
 
             <LinearLayout
                 android:id="@+id/goods_item_layout_price"
@@ -51,9 +55,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="最低价：￥"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
+                    android:text="最低价："
+                    android:textColor="@color/goods_item_text_normal"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥"
+                    android:textColor="@color/goods_item_text_normal"
+                    android:textSize="@dimen/goods_item_textsize_money_symbol" />
 
                 <TextView
                     android:id="@+id/goods_item_tv_price_lowest"
@@ -76,39 +87,52 @@
                     android:layout_height="wrap_content"
                     android:text="共"
                     android:textColor="@color/black"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="6"
                     android:textColor="@color/goods_item_red_light"
-                    android:textSize="15dp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="家报价"
                     android:textColor="@color/black"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="编号: 565432"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
+                    android:text="666"
+                    android:textColor="@color/goods_item_red_light"
+                    android:textSize="14dp" />
 
-                <Button
-                    android:id="@+id/goods_item_btn_compare"
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:background="@color/goods_item_btn_back"
-                    android:padding="2dp"
-                    android:text="比价"
-                    android:textColor="@color/white" />
+                    android:text="购买"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <Button
+                        android:id="@+id/goods_item_btn_compare"
+                        android:layout_width="@dimen/goods_item_btn_compare_width"
+                        android:layout_height="@dimen/goods_item_btn_compare_height"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/goods_item_btn_back"
+                        android:gravity="center"
+                        android:text="比价"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/goods_item_btn_compare_textsize" />
+                </RelativeLayout>
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>

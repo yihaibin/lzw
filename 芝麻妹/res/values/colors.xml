@@ -10,17 +10,19 @@
 
     <drawable name="transparent">#00000000</drawable>
     <drawable name="translucent">#bb000000</drawable>
-    
-    
-    <color name="text_color_white">#d5d5d5</color>
-    
-    <!-- goods_item -->
-    <color name="goods_item_red_light">#ffff4444</color>
-    <color name="goods_item_btn_back">#ffff4444</color>
 
-    
+    <color name="text_color_white">#d5d5d5</color>
+
+    <!-- goods_item -->
+    <color name="goods_item_red_light">#ff6599</color>
+    <color name="goods_item_text_normal">#636363</color>
+    <color name="goods_item_btn_back">#ff6599</color>
+    <color name="goods_item_text_normal">#636363</color>
+    <color name="goods_item_text_focus">#f41c65</color>
+    <color name="goods_item_split_line">#d7d7d7</color>
+
     <!-- channel manager -->
-        <item name="subscribe_item_text_color_normal_night" type="color">@color/default_text_night</item>
+    <item name="subscribe_item_text_color_normal_night" type="color">@color/default_text_night</item>
 
     <color name="default_text_night">#ff747474</color>
     <color name="subscribe_item_text_color_pressed_night">#ff303030</color>
@@ -48,4 +50,5 @@
     <color name="subscribe_activity_bg">#ffefefef</color>
     <color name="subscribe_bg">#fff5f5f5</color>
     <color name="subscribe_seperate_line">#ffcdcdcd</color>
+
 </resources>
