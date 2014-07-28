@@ -32,7 +32,7 @@ public class App extends ExApplication {
 		/* title bar 相关 */
 		
 		// 设置整个应用的背景
-		ExActivityParams.setBackgroundResId(android.R.color.white);// 整个app背景
+		ExActivityParams.setBackgroundResId(R.color.app_bg);// 整个app背景
 		// 设置标题栏背景和高度
 		ExActivityParams.setTitleViewBackgroundResId(R.color.pink);// 标题栏背景
 		ExActivityParams.setTitleViewHeight(DensityUtil.dip2px(48));// 标题栏高度
@@ -41,7 +41,7 @@ public class App extends ExApplication {
 		//ExActivityParams.setTitleViewImageClickerBackIconResId(R.drawable.ic_back);// back按钮
 		ExActivityParams.setTitleViewTextClickerHoriPadding(DensityUtil.dip2px(10));// 文字按钮水平间距6dp
 		// 标题栏文字大小和颜色
-		ExActivityParams.setTitleViewTitleTextSize(21);// dp
+		ExActivityParams.setTitleViewTitleTextSize(17);// dp
 		ExActivityParams.setTitleViewClickerTextSize(16);
 		ExActivityParams.setTitleViewTextColor(Color.WHITE);
 		ExActivityParams.setTitleViewMainTextSize(16);// dp

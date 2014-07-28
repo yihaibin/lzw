@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="pink">#FF5789</color>
+    <color name="app_bg">#f1f1f1</color>
+    <color name="pink">#FF6599</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="gray">#4b4b4b</color>
@@ -15,7 +16,6 @@
 
     <!-- goods_item -->
     <color name="goods_item_red_light">#ff6599</color>
-    <color name="goods_item_text_normal">#636363</color>
     <color name="goods_item_btn_back">#ff6599</color>
     <color name="goods_item_text_normal">#636363</color>
     <color name="goods_item_text_focus">#f41c65</color>
