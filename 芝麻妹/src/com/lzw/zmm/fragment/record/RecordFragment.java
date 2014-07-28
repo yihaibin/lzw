@@ -1,6 +1,9 @@
 package com.lzw.zmm.fragment.record;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.androidex.util.ViewUtil;
@@ -52,10 +55,20 @@ public class RecordFragment extends BaseFragment {
 	@Override
 	protected void initContentView() {
 		
-		ListView lvRecords = (ListView) findViewById(R.id.lvRecords);
+		final ListView lvRecords = (ListView) findViewById(R.id.lvRecords);
 		lvRecords.addHeaderView(ViewUtil.inflateSpaceViewBydp(3));
 		lvRecords.addFooterView(ViewUtil.inflateSpaceViewBydp(3));
 		lvRecords.setAdapter(mRecordAdapter);
+		
+		ImageView ivTop = (ImageView) findViewById(R.id.ivToTop);
+		ivTop.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+				if(!mRecordAdapter.isEmpty())
+					lvRecords.setSelectionFromTop(0, 0);
+			}
+		});
 	}
 
 
