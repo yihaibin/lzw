@@ -34,73 +34,80 @@
             android:text="确定" />
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/home_headview_layout_classify"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/home_headview_layout_filter_details"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/home_headview_layout_title"
-        android:orientation="horizontal"
-        android:padding="@dimen/home_headview_layout_radiogroup_padding" >
+        android:visibility="gone" >
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/home_headview_layout_classify"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="分类:"
-            android:textColor="@color/black"
-            android:textSize="@dimen/home_headview_textsize" />
+            android:orientation="horizontal"
+            android:padding="@dimen/home_headview_layout_radiogroup_padding" >
 
-        <com.lzw.zmm.view.FlowRadioGroup
-            android:id="@+id/home_headview_classify_rg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-        </com.lzw.zmm.view.FlowRadioGroup>
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分类:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/home_headview_textsize" />
 
-    <LinearLayout
-        android:id="@+id/home_headview_layout_effect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/home_headview_layout_classify"
-        android:orientation="horizontal"
-        android:padding="@dimen/home_headview_layout_radiogroup_padding" >
+            <com.lzw.zmm.view.FlowRadioGroup
+                android:id="@+id/home_headview_classify_rg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+            </com.lzw.zmm.view.FlowRadioGroup>
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/home_headview_layout_effect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="功效:"
-            android:textColor="@color/black"
-            android:textSize="@dimen/home_headview_textsize" />
+            android:layout_below="@id/home_headview_layout_classify"
+            android:orientation="horizontal"
+            android:padding="@dimen/home_headview_layout_radiogroup_padding" >
 
-        <com.lzw.zmm.view.FlowRadioGroup
-            android:id="@+id/home_headview_effect_rg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-        </com.lzw.zmm.view.FlowRadioGroup>
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="功效:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/home_headview_textsize" />
 
-    <LinearLayout
-        android:id="@+id/home_headview_layout_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/home_headview_layout_effect"
-        android:orientation="horizontal"
-        android:padding="@dimen/home_headview_layout_radiogroup_padding" >
+            <com.lzw.zmm.view.FlowRadioGroup
+                android:id="@+id/home_headview_effect_rg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+            </com.lzw.zmm.view.FlowRadioGroup>
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/home_headview_layout_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="功效:"
-            android:textColor="@color/black"
-            android:textSize="@dimen/home_headview_textsize" />
+            android:layout_below="@id/home_headview_layout_effect"
+            android:orientation="horizontal"
+            android:padding="@dimen/home_headview_layout_radiogroup_padding" >
 
-        <com.lzw.zmm.view.FlowRadioGroup
-            android:id="@+id/home_headview_price_rg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-        </com.lzw.zmm.view.FlowRadioGroup>
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="功效:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/home_headview_textsize" />
+
+            <com.lzw.zmm.view.FlowRadioGroup
+                android:id="@+id/home_headview_price_rg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+            </com.lzw.zmm.view.FlowRadioGroup>
+        </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

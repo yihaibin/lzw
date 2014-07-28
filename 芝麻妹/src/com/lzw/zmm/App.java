@@ -9,18 +9,17 @@ import com.androidex.http.task.HttpTask;
 import com.androidex.util.DensityUtil;
 import com.androidex.util.DeviceUtil;
 import com.androidex.util.StorageUtil;
+import com.lzw.zmm.db.SQLHelper;
 
 public class App extends ExApplication {
 
 	@Override
 	public void onCreate() {
-		
 		super.onCreate();
 		init();
 	}
 
 	private void init() {
-		
 		//设置sdcard应用的主目录
 		StorageUtil.setAppHomeDir("zhimamei");
 		
@@ -47,6 +46,22 @@ public class App extends ExApplication {
 		ExActivityParams.setTitleViewTextColor(Color.WHITE);
 		ExActivityParams.setTitleViewMainTextSize(16);// dp
 		ExActivityParams.setTitleViewSubTextSize(12);// dp
+	}
+	
+	/** 获取数据库Helper */
+	private static SQLHelper sSqlHelper;
+	public static SQLHelper getSQLHelper() {
+		if (sSqlHelper == null)
+			sSqlHelper = new SQLHelper(getContext());
+		return sSqlHelper;
+	}
+	
+	/** 摧毁应用进程时候调用 */
+	public void onTerminate() {
+		if (sSqlHelper != null) {
+			sSqlHelper.close();
+		}
+		super.onTerminate();
 	}
 
 }

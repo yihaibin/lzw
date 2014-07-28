@@ -1,4 +1,4 @@
-package com.lzw.zmm.db;
+package com.lzw.zmm.db.dao;
 
 import java.util.ArrayList;
 import java.util.List;

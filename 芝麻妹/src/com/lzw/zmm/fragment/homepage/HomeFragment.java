@@ -1,7 +1,8 @@
 package com.lzw.zmm.fragment.homepage;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.RadioButton;
 
 import com.lzw.zmm.R;
@@ -11,6 +12,9 @@ import com.lzw.zmm.view.FlowRadioGroup;
 
 public class HomeFragment extends BaseFragment {
 
+	private View mHeadView;
+	private View mLayoutFilterDetails;
+	
 	public HomeFragment() {
 	}
 	
@@ -19,6 +23,8 @@ public class HomeFragment extends BaseFragment {
 		super.onActivityCreated(savedInstanceState);
 		
 		setFragmentContentView(R.layout.home_fragment);
+		
+		startActivity(new Intent(getActivity(), ChannelActivity.class));
 	}
 	
 
@@ -39,7 +45,8 @@ public class HomeFragment extends BaseFragment {
 
 	@Override
 	protected void initContentView() {
-		
+		mHeadView = findViewById(R.id.homepage_headview);
+		mLayoutFilterDetails = findViewById(R.id.home_headview_layout_filter_details);
 		
 		/**
 		 * 使用动态的方式好处:
@@ -57,7 +64,7 @@ public class HomeFragment extends BaseFragment {
 		rgClassify.addView(getRadioButton("美妆工具"));
 		rgClassify.check(0);
 		
-		// 功效:
+		// 功效筛选
 		FlowRadioGroup rgEffect = (FlowRadioGroup) findViewById(R.id.home_headview_effect_rg);
 		rgEffect.addView(getRadioButton("全部"));
 		rgEffect.addView(getRadioButton("多功效"));

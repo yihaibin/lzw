@@ -7,7 +7,7 @@ import com.androidex.util.ViewUtil;
 import com.lzw.zmm.R;
 import com.lzw.zmm.adapter.RecordAdapter;
 import com.lzw.zmm.base.BaseFragment;
-import com.lzw.zmm.db.RecordDao;
+import com.lzw.zmm.db.dao.RecordDao;
 import com.lzw.zmm.util.res.ResLoader;
 
 public class RecordFragment extends BaseFragment {
