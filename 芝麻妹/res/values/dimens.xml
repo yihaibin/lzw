@@ -15,4 +15,6 @@
     <dimen name="home_headview_layout_rg_padding_vertical">19dp</dimen>
     
     
+    <dimen name="tabwidget_height">55.5dp</dimen>
+    
 </resources>

@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:layout_height="wrap_content" >
 
     <ImageView
         android:id="@+id/main_tab_iv"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/app_logo" />
-
-    <TextView
-        android:id="@+id/main_tab_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/main_tab_iv"
-        android:layout_centerHorizontal="true"
-        android:text="首页"
-        android:textColor="@color/text_color_white"
-        android:textSize="12dp" />
+        android:layout_height="@dimen/tabwidget_height"
+        android:scaleType="fitXY"
+        android:src="@drawable/tab_icon_home_selector" />
 
 </RelativeLayout>

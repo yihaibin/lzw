@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f1f1f1"
-    android:orientation="vertical" >
+    android:background="#f1f1f1" >
 
-    <include
-        android:id="@+id/homepage_headview"
-        layout="@layout/home_headview" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <include
+            android:id="@+id/home_titlebar"
+            layout="@layout/home_titlebar" />
+
+        <include
+            android:id="@+id/home_nav_bar"
+            layout="@layout/home_nav_bar" />
+
+        <include
+            android:id="@+id/home_headview"
+            layout="@layout/home_headview" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivToTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_to_top" />
+
+</RelativeLayout>

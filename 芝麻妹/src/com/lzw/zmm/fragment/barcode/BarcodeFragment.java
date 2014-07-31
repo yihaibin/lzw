@@ -26,6 +26,11 @@ public class BarcodeFragment extends BaseFragment{
 	}
 
 	@Override
+	public int getIvResId() {
+		return R.drawable.tab_icon_scan_selector;
+	}
+	
+	@Override
 	public int getViewId() {
 		return R.id.main_tab_fragment_barcode;
 	}

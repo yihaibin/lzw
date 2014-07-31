@@ -2,9 +2,11 @@ package com.lzw.zmm.fragment;
 
 import java.util.ArrayList;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TextView;
@@ -26,7 +28,6 @@ public class FragmentTabs extends BaseFragmentActivity implements OnTabChangeLis
 	private View mTabs;
 
 	private ArrayList<BaseFragment> mFragments;
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +58,11 @@ public class FragmentTabs extends BaseFragmentActivity implements OnTabChangeLis
 			View v = getLayoutInflater().inflate(R.layout.main_tab_item, null);
 
 			BaseFragment fragment = mFragments.get(i);
-
-			TextView tv = (TextView) v.findViewById(R.id.main_tab_tv);
 			String name = fragment.getTagName();
-			tv.setText(name);
-
+			
+			ImageView iv = (ImageView) v.findViewById(R.id.main_tab_iv);
+			iv.setImageResource(fragment.getIvResId());
+			
 			mTabHost.addTab(mTabHost.newTabSpec(name).setIndicator(v).setContent(fragment.getViewId()));
 		}
 

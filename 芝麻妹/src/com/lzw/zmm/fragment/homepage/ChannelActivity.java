@@ -20,16 +20,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.androidex.activity.ExActivity;
 import com.lzw.zmm.App;
 import com.lzw.zmm.R;
 import com.lzw.zmm.adapter.DragAdapter;
 import com.lzw.zmm.adapter.OtherAdapter;
 import com.lzw.zmm.bean.ChannelItem;
-import com.lzw.zmm.bean.ChannelManage;
+import com.lzw.zmm.bean.ChannelMgr;
 import com.lzw.zmm.view.DragGrid;
 import com.lzw.zmm.view.OtherGridView;
 
-public class ChannelActivity extends Activity implements OnItemClickListener {
+public class ChannelActivity extends ExActivity implements OnItemClickListener {
 	/** 用户栏目的GRIDVIEW */
 	private DragGrid mUserGridView;
 	/** 其它栏目的GRIDVIEW */
@@ -49,14 +50,20 @@ public class ChannelActivity extends Activity implements OnItemClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.subscribe_activity);
-		initView();
-		initData();
 	}
 
-	/** 初始化数据 */
-	private void initData() {
-		mUserChannelList = ((ArrayList<ChannelItem>) ChannelManage.getManage(App.getSQLHelper()).getUserChannel());
-		mOtherChannelList = ((ArrayList<ChannelItem>) ChannelManage.getManage(App.getSQLHelper()).getOtherChannel());
+	@Override
+	protected void initData() {
+		mUserChannelList = ((ArrayList<ChannelItem>) ChannelMgr.getManage(App.getSQLHelper()).getUserChannel());
+		mOtherChannelList = ((ArrayList<ChannelItem>) ChannelMgr.getManage(App.getSQLHelper()).getOtherChannel());
+	}
+
+
+	@Override
+	protected void initContentView() {
+		mUserGridView = (DragGrid) findViewById(R.id.userGridView);
+		mOtherGridView = (OtherGridView) findViewById(R.id.otherGridView);
+		
 		mUserAdapter = new DragAdapter(this, mUserChannelList);
 		mUserGridView.setAdapter(mUserAdapter);
 		mOtherAdapter = new OtherAdapter(this, mOtherChannelList);
@@ -66,10 +73,10 @@ public class ChannelActivity extends Activity implements OnItemClickListener {
 		mUserGridView.setOnItemClickListener(this);
 	}
 
-	/** 初始化布局 */
-	private void initView() {
-		mUserGridView = (DragGrid) findViewById(R.id.userGridView);
-		mOtherGridView = (OtherGridView) findViewById(R.id.otherGridView);
+	@Override
+	protected void initTitleView() {
+		addTitleLeftBackView();
+		addTitleMiddleTextView(R.string.drawer_btn_rss);
 	}
 
 	/** GRIDVIEW对应的ITEM点击监听接口 */
@@ -81,8 +88,8 @@ public class ChannelActivity extends Activity implements OnItemClickListener {
 		}
 		switch (parent.getId()) {
 			case R.id.userGridView:
-				// position为 0，1 的不可以进行任何操作
-				if (position != 0 && position != 1) {
+				// position为 0的不可以进行任何操作
+				if (position != 0) {
 					final ImageView moveImageView = getView(view);
 					if (moveImageView != null) {
 						TextView newTextView = (TextView) view.findViewById(R.id.text_item);
@@ -237,14 +244,15 @@ public class ChannelActivity extends Activity implements OnItemClickListener {
 
 	/** 退出时候保存选择后数据库的设置 */
 	private void saveChannel() {
-		ChannelManage.getManage(App.getSQLHelper()).deleteAllChannel();
-		ChannelManage.getManage(App.getSQLHelper()).saveUserChannel(mUserAdapter.getChannnelLst());
-		ChannelManage.getManage(App.getSQLHelper()).saveOtherChannel(mOtherAdapter.getChannnelLst());
+		ChannelMgr.getManage(App.getSQLHelper()).deleteAllChannel();
+		ChannelMgr.getManage(App.getSQLHelper()).saveUserChannel(mUserAdapter.getChannnelLst());
+		ChannelMgr.getManage(App.getSQLHelper()).saveOtherChannel(mOtherAdapter.getChannnelLst());
 	}
 
 	@Override
-	public void onBackPressed() {
+	public void finish() {
+		super.finish();
+		
 		saveChannel();
-		super.onBackPressed();
 	}
 }

@@ -18,8 +18,10 @@ abstract public class BaseFragment extends ExFragment {
 	protected LayoutInflater getLayoutInflater() {
 		return getActivity().getLayoutInflater();
 	}
-	
+
 	abstract public String getTagName();
+
+	abstract public int getIvResId();
 
 	abstract public int getViewId();
 }

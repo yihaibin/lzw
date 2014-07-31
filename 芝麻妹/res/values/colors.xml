@@ -21,6 +21,12 @@
     <color name="goods_item_text_focus">#f41c65</color>
     <color name="goods_item_split_line">#d7d7d7</color>
 
+    <!-- home_nav_bar -->
+    <drawable name="home_nav_bar_bg_checked">#e43570</drawable>
+    <drawable name="home_nav_bar_bg_normal">#00000000</drawable>
+    
+    
+    
     <!-- channel manager -->
     <item name="subscribe_item_text_color_normal_night" type="color">@color/default_text_night</item>
 

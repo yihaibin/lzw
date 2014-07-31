@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="39dp"
+    android:background="#ff6599" >
+
+    <ImageView
+        android:id="@+id/home_nav_bar_iv_add"
+        android:layout_width="48dp"
+        android:layout_height="39dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/home_nav_bar_btn_add_selector" />
+
+    <HorizontalScrollView
+        android:scrollbars="none"
+        android:id="@+id/home_nav_bar_sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/home_nav_bar_iv_add" >
+
+        <RadioGroup
+            android:id="@+id/home_nav_bar_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+        </RadioGroup>
+    </HorizontalScrollView>
+
+</RelativeLayout>

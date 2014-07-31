@@ -9,14 +9,15 @@ import android.database.SQLException;
 import com.lzw.zmm.db.SQLHelper;
 import com.lzw.zmm.db.dao.ChannelDao;
 
-public class ChannelManage {
+public class ChannelMgr {
 	
-	public static ChannelManage mChannelManage;
+	public static ChannelMgr mChannelManage;
 	
 	// 默认的用户选择频道列表
-	public static List<ChannelItem> mDefaultUserChannels;
+	private static List<ChannelItem> mDefaultUserChannels;
 	// 默认的其他频道列表
-	public static List<ChannelItem> mDefaultOtherChannels;
+	private static List<ChannelItem> mDefaultOtherChannels;
+	
 	private ChannelDao mChannelDao;
 
 	// 判断数据库中是否存在用户数据
@@ -37,16 +38,16 @@ public class ChannelManage {
 		mDefaultOtherChannels.add(new ChannelItem(9, "梦芭莎", 2, 0));
 	}
 
-	private ChannelManage(SQLHelper paramDBHelper) throws SQLException {
+	private ChannelMgr(SQLHelper paramDBHelper) throws SQLException {
 		if (mChannelDao == null) {
 			mChannelDao = new ChannelDao(paramDBHelper.getContext());
 		}
 		return;
 	}
 
-	public static ChannelManage getManage(SQLHelper dbHelper) throws SQLException {
+	public static ChannelMgr getManage(SQLHelper dbHelper) throws SQLException {
 		if (mChannelManage == null) {
-			mChannelManage = new ChannelManage(dbHelper);
+			mChannelManage = new ChannelMgr(dbHelper);
 		}
 		return mChannelManage;
 	}

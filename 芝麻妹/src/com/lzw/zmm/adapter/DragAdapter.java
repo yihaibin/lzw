@@ -61,7 +61,7 @@ public class DragAdapter extends BaseAdapter {
 		mTvItemContent = (TextView) view.findViewById(R.id.text_item);
 		ChannelItem channel = getItem(position);
 		mTvItemContent.setText(channel.getName());
-		if ((position == 0) || (position == 1)) {
+		if (position == 0) {
 			// item_text.setTextColor(context.getResources().getColor(R.color.black));
 			mTvItemContent.setEnabled(false);
 		}

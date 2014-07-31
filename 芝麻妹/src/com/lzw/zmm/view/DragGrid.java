@@ -189,7 +189,7 @@ public class DragGrid extends GridView {
 
 				mStartPosition = position;// 第一次点击的postion
 				mDragPosition = position;
-				if (mStartPosition <= 1) {
+				if (mStartPosition < 1) {
 					return false;
 				}
 				ViewGroup dragViewGroup = (ViewGroup) getChildAt(mDragPosition - getFirstVisiblePosition());
@@ -290,7 +290,7 @@ public class DragGrid extends GridView {
 		// 拖动的VIEW下方的POSTION
 		int dPosition = pointToPosition(x, y);
 		// 判断下方的POSTION是否是最开始2个不能拖动的
-		if (dPosition > 1) {
+		if (dPosition > 0) {
 			if ((dPosition == -1) || (dPosition == mDragPosition)) {
 				return;
 			}
