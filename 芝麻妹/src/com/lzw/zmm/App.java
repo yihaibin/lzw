@@ -38,7 +38,7 @@ public class App extends ExApplication {
 		ExActivityParams.setTitleViewHeight(DensityUtil.dip2px(48));// 标题栏高度
 		// 设置标题栏按钮样式
 		ExActivityParams.setTitleViewClickerBgResId(R.drawable.bg_trans_black20_selector);// 标题栏点击按钮的背景
-		//ExActivityParams.setTitleViewImageClickerBackIconResId(R.drawable.ic_back);// back按钮
+		ExActivityParams.setTitleViewImageClickerBackIconResId(R.drawable.ic_back);// back按钮
 		ExActivityParams.setTitleViewTextClickerHoriPadding(DensityUtil.dip2px(10));// 文字按钮水平间距6dp
 		// 标题栏文字大小和颜色
 		ExActivityParams.setTitleViewTitleTextSize(17);// dp

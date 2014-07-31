@@ -1,6 +1,7 @@
 package com.lzw.zmm.adapter;
 
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import com.androidex.adapter.ExAdapter;
@@ -23,6 +24,7 @@ public class RecordAdapter extends ExAdapter<Record>{
 		
 		private AsyncImageView mAivRecordCover;
 		private TextView mTvRecordTitle, mTvRecordTime;
+		private View mClicker;
 		
 		@Override
 		public int getConvertViewRid() {
@@ -36,6 +38,14 @@ public class RecordAdapter extends ExAdapter<Record>{
 			mAivRecordCover = (AsyncImageView) convertView.findViewById(R.id.aivRecordCover);
 			mTvRecordTitle = (TextView) convertView.findViewById(R.id.tvRecordTitle);
 			mTvRecordTime = (TextView) convertView.findViewById(R.id.tvRecordTime);
+			mClicker = convertView.findViewById(R.id.llClicker);
+			mClicker.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					
+					callbackOnItemViewClickListener(mPosition, v);
+				}
+			});
 		}
 
 		@Override

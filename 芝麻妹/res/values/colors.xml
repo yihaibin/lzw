@@ -50,5 +50,9 @@
     <color name="subscribe_activity_bg">#ffefefef</color>
     <color name="subscribe_bg">#fff5f5f5</color>
     <color name="subscribe_seperate_line">#ffcdcdcd</color>
-
+	
+    <!-- zxing part -->
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color> 
 </resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_weight="1">
+
+        <SurfaceView
+            android:id="@+id/preview_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <com.lzw.zmm.zxing.view.ViewfinderView
+            android:id="@+id/viewfinder_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="49dp"
+	    android:layout_weight="0"
+	    android:orientation="horizontal"
+	    android:paddingLeft="10dp"
+	    android:paddingTop="5dp"
+	    android:paddingBottom="5dp"
+	    android:gravity="center_vertical"
+	    android:background="@color/pink">
+	    
+	    <EditText 
+	        android:id="@+id/etBarcode"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:paddingLeft="5dp"
+	        android:paddingRight="5dp"	        
+	        android:textSize="15dp"
+	        android:textColor="#636363"
+	        android:singleLine="true"
+	        android:gravity="center_vertical|left"
+	        android:hint="请输入条形码"
+	        android:background="@drawable/bg_barcode_edittext"/>
+	    <TextView 
+	        android:id="@+id/tvSearch"
+	        android:layout_width="wrap_content"
+	        android:layout_height="49dp"
+	        android:paddingLeft="10dp"
+	        android:paddingRight="10dp"
+	        android:textColor="@android:color/white"
+	        android:textSize="17dp"
+	        android:text="搜索"
+	        android:gravity="center"/>
+	</LinearLayout>
+</LinearLayout>

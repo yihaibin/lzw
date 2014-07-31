@@ -16,5 +16,7 @@
     <string name="subscribe_more_category">更多频道</string>
     <string name="subscribe_manager_category_info">单击增删频道</string>
     <string name="subscribe_manager_category_info_2">单击增删频道，长按拖拽排序</string>
-
+	
+    <!-- zxing part -->
+    <string name="scan_text">将条形码/二维码放入框内, 即可自动扫描</string>
 </resources>

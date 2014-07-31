@@ -86,30 +86,21 @@ public class RecordDao extends BaseDBHelp{
 		Cursor cursor = null;
 		try{
 			
-//			String sql = "SELECT "+FIELD__ID+", "
-//								  +RECORD_FIELD_TITLE+", "
-//								  +RECORD_FIELD_COVER_URL+", "
-//								  +RECORD_FIELD_TIMESTAMP+" FROM "+RECORD_TABLE_NAME+" ORDER BY "+FIELD__ID+" DESC";
-//			
-//			db = getReadableDatabase();
-//			cursor = db.rawQuery(sql, null);
+			String sql = "SELECT "+FIELD__ID+", "
+								  +RECORD_FIELD_TITLE+", "
+								  +RECORD_FIELD_COVER_URL+", "
+								  +RECORD_FIELD_TIMESTAMP+" FROM "+RECORD_TABLE_NAME+" ORDER BY "+FIELD__ID+" DESC";
+			
+			db = getReadableDatabase();
+			cursor = db.rawQuery(sql, null);
 			Record record = null;
-//			while(cursor.moveToNext()){
-//				
-//				scanner = new Record();
-//				scanner.setId(cursor.getInt(0));
-//				scanner.setTitle(cursor.getString(1));
-//				scanner.setCoverUrl(cursor.getString(2));
-//				scanner.setTimeStamp(cursor.getLong(3));
-//				records.add(scanner);
-//			}
-			for(int i=0; i<50; i++){
+			while(cursor.moveToNext()){
 				
 				record = new Record();
-				record.setId(i+1);
-				record.setTitle("补水保湿包面霜50ml补水保湿包面霜50ml补水保湿包面霜50ml补水保湿包面霜50ml补水保湿包面霜50ml"+(i+1));
-				record.setCoverUrl("http://www.asdfjasdfj.com");
-				record.setTimeStamp(System.currentTimeMillis()+i+1);
+				record.setId(cursor.getInt(0));
+				record.setTitle(cursor.getString(1));
+				record.setCoverUrl(cursor.getString(2));
+				record.setTimeStamp(cursor.getLong(3));
 				records.add(record);
 			}
 			

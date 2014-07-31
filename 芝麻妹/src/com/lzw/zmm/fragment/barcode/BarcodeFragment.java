@@ -1,22 +1,23 @@
 package com.lzw.zmm.fragment.barcode;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 import com.lzw.zmm.R;
 import com.lzw.zmm.base.BaseFragment;
 import com.lzw.zmm.util.res.ResLoader;
+import com.lzw.zmm.zxing.activity.MipcaActivityCapture;
 
-public class BarcodeFragment extends BaseFragment {
 
-	public BarcodeFragment() {
-	}
+public class BarcodeFragment extends BaseFragment{
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		
 		super.onActivityCreated(savedInstanceState);
 		setFragmentContentView(R.layout.barcode_fragment);
-		System.out.println("~~onActivityCreated");
 	}
 	
 	@Override
@@ -31,34 +32,28 @@ public class BarcodeFragment extends BaseFragment {
 
 	@Override
 	protected void initData() {
-
+		
 	}
 
 	@Override
 	protected void initTitleView() {
 		
-		addTitleMiddleTextView(R.string.barcode_scanner);
+		addTitleMiddleTextView("条形码扫描");
 	}
 	
 	@Override
 	protected void initContentView() {
 		
+		TextView tvSearch = (TextView) findViewById(R.id.tvSearch);
+		tvSearch.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+				MipcaActivityCapture.startActivity(getActivity());
+			}
+		});
 	}
+
+
 	
-	@Override
-	public void onHiddenChanged(boolean hidden) {
-		
-		super.onHiddenChanged(hidden);
-		System.out.println("~~onHiddenChanged "+hidden);
-	}
-	
-	@Override
-	public void onResume() {
-		super.onResume();
-	}
-	
-	@Override
-	public void onPause() {
-		super.onPause();
-	}
 }
