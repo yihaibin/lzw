@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/channel_activity_bg" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/channel_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/channel_bg"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp" >
+
+                <TextView
+                    android:id="@+id/my_category_text"
+                    style="@style/channel_my_tip_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/channel_my_category" />
+
+                <TextView
+                    android:id="@+id/my_category_tip_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:text="@string/subscribe_manager_category_info_2"
+                    android:textColor="@color/channel_tip_text"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/seperate_line"
+                style="@style/subscribe_seperate_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.lzw.zmm.view.DragGrid
+                android:id="@+id/userGridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:gravity="center"
+                android:horizontalSpacing="19dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3"
+                android:scrollbars="vertical"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="15dp" />
+
+            <View
+                android:id="@+id/seperate_line2"
+                style="@style/subscribe_seperate_line"
+                android:layout_width="wrap_content" />
+
+            <TextView
+                android:id="@+id/more_category_text"
+                style="@style/channel_my_tip_text"
+                android:layout_marginBottom="19dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="19dp"
+                android:text="更多频道" />
+
+            <com.lzw.zmm.view.OtherGridView
+                android:id="@+id/otherGridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:gravity="center"
+                android:horizontalSpacing="19dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3"
+                android:scrollbars="vertical"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="15dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/category_layout"
+        layout="@layout/channel_category_item"
+        android:visibility="gone" />
+
+</RelativeLayout>

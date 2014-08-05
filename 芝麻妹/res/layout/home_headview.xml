@@ -30,50 +30,68 @@
             android:textColor="#636363"
             android:textSize="17dp" />
 
-        <RadioGroup
-            android:id="@+id/home_headview_rg"
-            android:layout_width="99dp"
-            android:layout_height="35dp"
+        <RelativeLayout
+            android:id="@+id/home_headview_layout_filter_not_show"
+            android:layout_width="match_parent"
+            android:layout_height="46dp" >
+
+            <RadioGroup
+                android:id="@+id/home_headview_rg"
+                android:layout_width="99dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/home_headview_radiobtn_default"
+                    android:layout_width="49dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/home_headview_btn_default_selector"
+                    android:button="@null" />
+
+                <RadioButton
+                    android:id="@+id/home_headview_radiobtn_sales"
+                    android:layout_width="49dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/home_headview_btn_sales_selector"
+                    android:button="@null" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/home_headview_rg" >
+
+                <TextView
+                    android:id="@+id/home_headview_tv_goods_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3377"
+                    android:textColor="#ff6599"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="个商品"
+                    android:textColor="#636363"
+                    android:textSize="14dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/home_headview_btn_confirm"
+            android:layout_width="48dp"
+            android:layout_height="23dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="6dp"
-            android:orientation="horizontal" >
-
-            <RadioButton
-                android:layout_width="49dp"
-                android:layout_height="35dp"
-                android:background="@drawable/home_headview_default_normal"
-                android:button="@null" />
-
-            <RadioButton
-                android:layout_width="49dp"
-                android:layout_height="35dp"
-                android:background="@drawable/home_headview_sales_normal"
-                android:button="@null" />
-        </RadioGroup>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="5dp"
-            android:layout_toLeftOf="@id/home_headview_rg" >
-
-            <TextView
-                android:id="@+id/home_headview_tv_goods_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3377"
-                android:textColor="#ff6599"
-                android:textSize="14dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="个商品"
-                android:textColor="#636363"
-                android:textSize="14dp" />
-        </LinearLayout>
+            android:layout_marginRight="11dp"
+            android:src="@drawable/home_headview_btn_confirm"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <View

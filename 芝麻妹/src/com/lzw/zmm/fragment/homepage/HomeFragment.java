@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -17,6 +19,7 @@ import com.lzw.zmm.R;
 import com.lzw.zmm.base.BaseFragment;
 import com.lzw.zmm.bean.ChannelItem;
 import com.lzw.zmm.bean.ChannelMgr;
+import com.lzw.zmm.bean.Good;
 import com.lzw.zmm.util.res.ResLoader;
 import com.lzw.zmm.view.FlowRadioGroup;
 
@@ -26,8 +29,14 @@ public class HomeFragment extends BaseFragment {
 	
 	public static final int KRequestCodeAddChannels = 0;
 	
+	private ListView mLv;
+	
 	private View mHeadView;
+	private View mHeadViewTitle;
+	
 	private View mLayoutFilterDetails;
+	private View mLayoutFilterNotShow;
+	private View mBtnConfirm;
 	
 	private RadioGroup mRgNavBar;
 	private ArrayList<RadioButton> mRbsNavBar = new ArrayList<RadioButton>();
@@ -37,7 +46,15 @@ public class HomeFragment extends BaseFragment {
 	private ArrayList<RadioButton> mRbsPrice = new ArrayList<RadioButton>();
 	private ArrayList<RadioButton> mRbsOther = new ArrayList<RadioButton>();
 	
+	private ArrayList<RadioButton> mRbsGoodsSort = new ArrayList<RadioButton>();
+	
+	private ArrayList<Good> mGoods;
+	private HomeAdapter mAdapter;
+	
+	private boolean mIsShowFilter = false;
+	
 	public HomeFragment() {
+		
 	}
 	
 	@Override
@@ -45,8 +62,6 @@ public class HomeFragment extends BaseFragment {
 		super.onActivityCreated(savedInstanceState);
 		
 		setFragmentContentView(R.layout.home_fragment);
-		
-//		startActivity(new Intent(getActivity(), ChannelActivity.class));
 	}
 	
 
@@ -71,13 +86,90 @@ public class HomeFragment extends BaseFragment {
 		for (int i = 0; i < channels.size(); ++i) {
 			mRbsNavBar.add(getNavBarRadioButton(channels.get(i).getName()));
 		}
+		
+		// TODO: 测试数据
+		mGoods = new ArrayList<Good>();
+		for (int i = 0; i < 20; ++i) {
+			mGoods.add(new Good());
+		}
 	}
 
 	@Override
 	protected void initContentView() {
-		mHeadView = findViewById(R.id.home_headview);
-		mLayoutFilterDetails = findViewById(R.id.home_headview_layout_filter_details);
+		mLv = (ListView) findViewById(R.id.home_lv);
 		
+		initHeadView();
+		mLv.addHeaderView(mHeadView);
+		
+		mBtnConfirm = findViewById(R.id.home_headview_btn_confirm);
+		mBtnConfirm.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				hideFilterView();
+				// 重新从网络获取数据
+				
+			}
+		});
+		mLayoutFilterNotShow = findViewById(R.id.home_headview_layout_filter_not_show);
+		
+		initFilterView();
+		
+		mAdapter = new HomeAdapter(mGoods);
+		mLv.setAdapter(mAdapter);
+		
+		hideFilterView();
+		
+		ImageView ivTop = (ImageView) findViewById(R.id.ivToTop);
+		ivTop.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+				if (!mAdapter.isEmpty()) {
+					mLv.setSelectionFromTop(0, 0);
+				}
+			}
+		});
+	}
+
+	@Override
+	protected void initTitleView() {
+		getTitleView().setVisibility(View.GONE);
+	}
+	
+	private void initHeadView() {
+		mHeadView = getLayoutInflater().inflate(R.layout.home_headview, null);
+		mLayoutFilterDetails = mHeadView.findViewById(R.id.home_headview_layout_filter_details);
+		mHeadViewTitle = mHeadView.findViewById(R.id.home_headview_layout_title);
+		mHeadViewTitle.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if (mIsShowFilter) {
+					mIsShowFilter = false;
+					hideFilterView();
+				} else {
+					mIsShowFilter = true;
+					showFilterView();
+				}
+			}
+		});
+		
+		// 默认/销量
+		RadioGroup headViewRg = (RadioGroup) mHeadView.findViewById(R.id.home_headview_rg);
+		mRbsGoodsSort.add((RadioButton) mHeadView.findViewById(R.id.home_headview_radiobtn_default));
+		mRbsGoodsSort.add((RadioButton) mHeadView.findViewById(R.id.home_headview_radiobtn_sales));
+		headViewRg.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				
+			}
+		});
+		headViewRg.check(mRbsGoodsSort.get(0).getId());
+	}
+	
+	private void initFilterView() {
 		/**
 		 * 使用动态的方式好处:
 		 * 1. 方便添加, 代码简介
@@ -179,20 +271,15 @@ public class HomeFragment extends BaseFragment {
 		mRgNavBar.check(mRbsNavBar.get(0).getId());
 		
 		
+		// 添加频道
 		View ivAddChanel = findViewById(R.id.home_nav_bar_iv_add);
 		ivAddChanel.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				getActivity().startActivityFromFragment(HomeFragment.this, new Intent(getActivity(), ChannelActivity.class), KRequestCodeAddChannels);
-//				startActivityForResult(new Intent(getActivity(), ChannelActivity.class), KRequestCodeAddChannels);
 			}
 		});
-	}
-
-	@Override
-	protected void initTitleView() {
-		getTitleView().setVisibility(View.GONE);
 	}
 	
 	private RadioButton getNavBarRadioButton(String text) {
@@ -231,4 +318,16 @@ public class HomeFragment extends BaseFragment {
 		updateChannel();
 	}
 	
+	
+	private void showFilterView() {
+		mLayoutFilterDetails.setVisibility(View.VISIBLE);
+		mLayoutFilterNotShow.setVisibility(View.GONE);
+		mBtnConfirm.setVisibility(View.VISIBLE);
+	}
+	
+	private void hideFilterView() {
+		mLayoutFilterDetails.setVisibility(View.GONE);
+		mLayoutFilterNotShow.setVisibility(View.VISIBLE);
+		mBtnConfirm.setVisibility(View.GONE);
+	}
 }

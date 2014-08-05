@@ -10,8 +10,8 @@ import android.database.sqlite.SQLiteDatabase;
 import com.androidex.db.BaseDBHelp;
 import com.lzw.zmm.bean.Record;
 
-public class RecordDao extends BaseDBHelp{
-	
+public class RecordDao extends BaseDBHelp {
+
 	private static final String RECORD_TABLE_NAME = "scanner";
 	private static final String RECORD_FIELD_TITLE = "title";
 	private static final String RECORD_FIELD_COVER_URL = "cover_url";

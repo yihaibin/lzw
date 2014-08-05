@@ -137,7 +137,7 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <com.lzw.lib.view.AbsListView
+    <com.androidex.view.NoCacheListView
         android:id="@+id/goods_item_lv_compare_items"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -148,6 +148,6 @@
         android:listSelector="@color/transparent"
         android:scrollbars="none"
         android:scrollingCache="false" >
-    </com.lzw.lib.view.AbsListView>
+    </com.androidex.view.NoCacheListView>
 
 </LinearLayout>

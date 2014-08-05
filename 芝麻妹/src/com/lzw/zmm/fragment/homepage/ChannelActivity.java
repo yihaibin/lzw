@@ -49,7 +49,7 @@ public class ChannelActivity extends ExActivity implements OnItemClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.subscribe_activity);
+		setContentView(R.layout.channel_activity);
 	}
 
 	@Override

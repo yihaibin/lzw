@@ -47,7 +47,7 @@ public class OtherAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		View view = LayoutInflater.from(mContext).inflate(R.layout.subscribe_category_item, null);
+		View view = LayoutInflater.from(mContext).inflate(R.layout.channel_category_item, null);
 		mTvItemContent = (TextView) view.findViewById(R.id.text_item);
 		ChannelItem channel = getItem(position);
 		mTvItemContent.setText(channel.getName());
